@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
 
-const Layout = ({ children, title = 'ระบบจัดการสนาม' }) => (
+const Layout = ({ children, title = 'ระบบจัดการสนาม', router }) => (
   <div className="root">
     <Head>
       <title>{`Lenkila : ${title}`}</title>
@@ -15,20 +16,20 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
       <a className="navbar-brand" href="#">LENKILA Stadium</a>
     </nav>
     <div className="content d-flex flex-row">
-      
       {/* Sidebar */}
       <ul className="nav navbar-light flex-column">
         <li className="nav-item">
           <Link href="/">
-            <a className="nav-link active">
+            <a className={`nav-link ${router.pathname === '/' && 'active'}`}>
               <i className="fa fa-newspaper-o"></i>
               รายการวันนี้
             </a>
           </Link>
         </li>
+        {console.log(router.pathname)}
         <li className="nav-item">
           <Link href="/money">
-            <a className="nav-link">
+            <a className={`nav-link ${router.pathname === '/money' && 'active'}`}>
               <i className="fa fa-money"></i>
               เติมเงิน / จ่ายเงิน
             </a>
@@ -36,7 +37,7 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
         </li>
         <li className="nav-item">
           <Link href="/booking-table">
-            <a className="nav-link">
+            <a className={`nav-link ${router.pathname === '/booking-table' && 'active'}`}>
               <i className="fa fa-calendar-plus-o"></i>
               ตารางจองสนาม
             </a>
@@ -44,7 +45,7 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
         </li>
         <li className="nav-item">
           <Link href="/field-management">
-            <a className="nav-link">
+            <a className={`nav-link ${router.pathname === '/field-management' && 'active'}`}>
               <i className="fa fa-dashboard"></i>
               หน้าจัดการสนาม
             </a>
@@ -52,7 +53,7 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
         </li>
         <li className="nav-item">
           <Link href="/customer">
-            <a className="nav-link">
+            <a className={`nav-link ${router.pathname === '/customer' && 'active'}`}>
               <i className="fa fa-users"></i>
               ข้อมูลลูกค้า
             </a>
@@ -60,14 +61,14 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
         </li>
         <li className="nav-item">
           <Link href="/customer">
-            <a className="nav-link">
+            <a className={`nav-link ${router.pathname === '/user-management' && 'active'}`}>
               <i className="fa fa-address-book-o"></i>
               การจัดการบัญชีผู้ใช้งาน
             </a>
           </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link">
+          <a className={`nav-link ${router.pathname === '/connect' && 'active'}`}>
             <i className="fa fa-quote-left"></i>
             LENKILA Connect
           </a>
@@ -102,14 +103,15 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
               text-align: center;
               font-size: 20px;
             }
-            & > a {
-              height: 100%;
-              display: flex;
-              align-items: center;
-            }
           }
           .nav-link {
             color: #fff;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            &.active {
+              background-color: #062c69;
+            }
           }
         }
         .page {
@@ -130,4 +132,4 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
   </div>
 );
 
-export default Layout;
+export default withRouter(Layout);
