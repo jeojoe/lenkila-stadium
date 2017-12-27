@@ -11,9 +11,22 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossOrigin="anonymous" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
       <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet" />
+      <link href="/static/react-datepicker.min.css" rel="stylesheet" />
     </Head>
-    <nav className="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark d-flex justify-content-space-between">
       <a className="navbar-brand" href="#">LENKILA Stadium</a>
+      <div className="d-flex flex-row">
+        <Link href="/money">
+          <button type="button" className="top-btn btn btn-primary">
+            เติมเงิน / จ่ายเงิน
+          </button>
+        </Link>
+        <Link href="/booking-table">
+          <button type="button" className="top-btn btn btn-success">
+            จองสนาม
+          </button>
+        </Link>
+      </div>
     </nav>
     <div className="content d-flex flex-row">
       {/* Sidebar */}
