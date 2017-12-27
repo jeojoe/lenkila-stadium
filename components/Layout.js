@@ -26,7 +26,6 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
             </a>
           </Link>
         </li>
-        {console.log(router.pathname)}
         <li className="nav-item">
           <Link href="/money">
             <a className={`nav-link ${router.pathname === '/money' && 'active'}`}>
@@ -80,55 +79,53 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
         {children}
       </div>
     </div>
-    <style jsx>
-      {`
-        .navbar {
-          background: linear-gradient(270deg,#000 0,#062a64 100%);
-          box-shadow: 0px 4px 6px rgba(0,0,0,0.4);
-        }
-        .nav {
-          width: 220px;
-          height: 100vh;
-          background: linear-gradient(135deg,#000 0,#062a64 100%);
-          .nav-item {
-            transition: all 0.2s;
-            height: 50px;
-            font-size: 15px;
-            &:hover {
-              background-color: #062c69;
-            }
-            .fa {
-              margin-right: 10px;
-              width: 25px;
-              text-align: center;
-              font-size: 20px;
-            }
-          }
-          .nav-link {
-            color: #fff;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            &.active {
-              background-color: #062c69;
-            }
-          }
-        }
-        .page {
-          width: calc(100% - 220px);
-        }
-        .root {
-          width: 100vw;
-          height: 100vh;
-          overflow: hidden;
-        }
-      `}
-    </style>
-    <style jsx global>{`
-      .page-container {
-        padding: 20px;
+    <style jsx>{`
+      .navbar {
+        background: linear-gradient(270deg,#000 0,#062a64 100%);
+        box-shadow: 0px 4px 6px rgba(0,0,0,0.4);
       }
-    `}</style>
+      .nav {
+        width: 220px;
+        height: 100vh;
+        background: linear-gradient(135deg,#000 0,#062a64 100%);
+        .nav-item {
+          transition: all 0.2s;
+          height: 50px;
+          font-size: 15px;
+          &:hover {
+            background-color: #062c69;
+          }
+          .fa {
+            margin-right: 10px;
+            width: 25px;
+            text-align: center;
+            font-size: 20px;
+          }
+        }
+        .nav-link {
+          color: #fff;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          &.active {
+            background-color: #062c69;
+          }
+        }
+      }
+      .page {
+        width: calc(100% - 220px);
+      }
+      .root {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .page-container {
+        padding: 25px;
+        overflow: hidden;
+      }
+    `}
+    </style>
   </div>
 );
 
