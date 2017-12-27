@@ -11,52 +11,109 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
       <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet" />
     </Head>
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="#">Lenkila Stadium</a>
+    <nav className="navbar navbar-expand-lg navbar-dark">
+      <a className="navbar-brand" href="#">LENKILA Stadium</a>
     </nav>
     <div className="content d-flex flex-row">
       
       {/* Sidebar */}
-      <ul className="nav navbar-light bg-light flex-column">
+      <ul className="nav navbar-light flex-column">
         <li className="nav-item">
-          <a className="nav-link active">รายการวันนี้</a>
+          <Link href="/">
+            <a className="nav-link active">
+              <i className="fa fa-newspaper-o"></i>
+              รายการวันนี้
+            </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link">เติมเงิน / จ่ายเงิน</a>
+          <Link href="/money">
+            <a className="nav-link">
+              <i className="fa fa-money"></i>
+              เติมเงิน / จ่ายเงิน
+            </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link">ตารางจองสนาม</a>
+          <Link href="/booking-table">
+            <a className="nav-link">
+              <i className="fa fa-calendar-plus-o"></i>
+              ตารางจองสนาม
+            </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link">หน้าจัดการสนาม</a>
+          <Link href="/field-management">
+            <a className="nav-link">
+              <i className="fa fa-dashboard"></i>
+              หน้าจัดการสนาม
+            </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link">ข้อมูลลูกค้า</a>
+          <Link href="/customer">
+            <a className="nav-link">
+              <i className="fa fa-users"></i>
+              ข้อมูลลูกค้า
+            </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link">การจัดการบัญชีผู้ใช้งาน</a>
+          <Link href="/customer">
+            <a className="nav-link">
+              <i className="fa fa-address-book-o"></i>
+              การจัดการบัญชีผู้ใช้งาน
+            </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link">LENKILA Connect</a>
+          <a className="nav-link">
+            <i className="fa fa-quote-left"></i>
+            LENKILA Connect
+          </a>
         </li>
       </ul>
 
       {/* Page */}
-      <div className="page">
-        {children}sdfsdf
+      <div className="page-container">
+        {children}
       </div>
     </div>
     <style jsx>
       {`
+        .navbar {
+          background: linear-gradient(270deg,#000 0,#062a64 100%);
+          box-shadow: 0px 4px 6px rgba(0,0,0,0.4);
+        }
         .nav {
-          width: 200px;
+          width: 220px;
           height: 100vh;
+          background: linear-gradient(135deg,#000 0,#062a64 100%);
           .nav-item {
             transition: all 0.2s;
+            height: 50px;
+            font-size: 15px;
+            &:hover {
+              background-color: #062c69;
+            }
+            .fa {
+              margin-right: 10px;
+              width: 25px;
+              text-align: center;
+              font-size: 20px;
+            }
+            & > a {
+              height: 100%;
+              display: flex;
+              align-items: center;
+            }
+          }
+          .nav-link {
+            color: #fff;
           }
         }
         .page {
-          width: calc(100% - 200px);
+          width: calc(100% - 220px);
         }
         .root {
           width: 100vw;
@@ -66,8 +123,8 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
       `}
     </style>
     <style jsx global>{`
-      * {
-        font-family: 'Kanit', sans-serif;
+      .page-container {
+        padding: 20px;
       }
     `}</style>
   </div>
