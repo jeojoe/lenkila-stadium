@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { withRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
+import moment from 'moment';
+
+moment.locale('th');
 
 const Layout = ({ children, title = 'ระบบจัดการสนาม', router }) => (
   <div className="root">
