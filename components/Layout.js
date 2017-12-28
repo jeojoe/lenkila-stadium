@@ -96,6 +96,9 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
       </div>
     </div>
     <style jsx>{`
+      .top-btn {
+        margin-right: 20px;
+      }
       .navbar {
         background: linear-gradient(270deg,#000 0,#062a64 100%);
         box-shadow: 0px 4px 6px rgba(0,0,0,0.4);
@@ -128,9 +131,6 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
           }
         }
       }
-      .page {
-        width: calc(100% - 220px);
-      }
       .root {
         width: 100vw;
         height: 100vh;
@@ -139,6 +139,7 @@ const Layout = ({ children, title = 'ระบบจัดการสนาม'
       .page-container {
         padding: 25px;
         overflow: hidden;
+        width: calc(100% - 220px);
       }
     `}
     </style>
