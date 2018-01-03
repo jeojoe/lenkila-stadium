@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
+import { StadiumBookingModal } from '../components';
 
 class StadiumBookingColumnItem extends Component {
   state = {
@@ -40,13 +40,10 @@ class StadiumBookingColumnItem extends Component {
           }
         `}
         </style>
-        <Modal
+        <StadiumBookingModal
           isOpen={this.state.isOpen}
-          onRequestClose={() => this.setState({ isOpen: false })}
-          shouldCloseOnOverlayClick
-        >
-          sdkfjsdkfjsfj
-        </Modal>
+          setIsOpen={isOpen => this.setState({ isOpen })}
+        />
       </div>
     );
   }
